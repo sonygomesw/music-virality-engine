@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Assets — Music Virality Engine</title>
+    <meta name="description" content="Submit your track assets to launch your campaign.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .start-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .start-content {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .success-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .start-page h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 16px;
+        }
+
+        .start-page .intro {
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .form-group label span {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--text);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .form-group select option {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px 32px;
+            margin-top: 16px;
+        }
+
+        .form-footer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .form-footer p {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .form-footer a {
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="start-page">
+        <div class="container">
+            <div class="start-content">
+                <span class="success-badge">Payment received</span>
+                <h1>Submit your assets.</h1>
+                <p class="intro">
+                    We launch within 24–72h after receiving your assets.<br>
+                    Fill in the form below — takes about 5 minutes.
+                </p>
+
+                <form id="asset-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                    <input type="hidden" name="order_id" id="order_id" value="">
+
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Instagram handle <span>(optional)</span></label>
+                        <input type="text" name="instagram" placeholder="@yourhandle">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Track link <span>(Spotify, Apple Music, or other)</span></label>
+                        <input type="url" name="track_link" required placeholder="https://open.spotify.com/track/...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>TikTok sound link <span>(if available)</span></label>
+                        <input type="url" name="tiktok_sound" placeholder="https://www.tiktok.com/music/...">
+                        <p class="form-note">If your track is already on TikTok, paste the sound link here.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Target country/language</label>
+                        <select name="target_market" required>
+                            <option value="">Select market...</option>
+                            <option value="US - English">US - English</option>
+                            <option value="UK - English">UK - English</option>
+                            <option value="France - French">France - French</option>
+                            <option value="Germany - German">Germany - German</option>
+                            <option value="Spain - Spanish">Spain - Spanish</option>
+                            <option value="LATAM - Spanish">LATAM - Spanish</option>
+                            <option value="Brazil - Portuguese">Brazil - Portuguese</option>
+                            <option value="Italy - Italian">Italy - Italian</option>
+                            <option value="Global - English">Global - English</option>
+                            <option value="Other">Other (specify in notes)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Video assets link <span>(Google Drive, Dropbox, WeTransfer)</span></label>
+                        <input type="url" name="video_assets" required placeholder="https://drive.google.com/...">
+                        <p class="form-note">Upload 10–30 short videos. No watermarks. We'll provide format guidelines if needed.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional notes <span>(optional)</span></label>
+                        <textarea name="notes" placeholder="Any specific instructions, target audience, or context we should know..."></textarea>
+                    </div>
+
+                    <button type="submit" class="cta-btn submit-btn">Submit assets</button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Questions? Email us at <a href="mailto:contact@example.com">contact@example.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get order_id from URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order_id') || urlParams.get('session_id');
+        if (orderId) {
+            document.getElementById('order_id').value = orderId;
+        }
+
+        // Form submission handling
+        document.getElementById('asset-form').addEventListener('submit', function(e) {
+            const btn = this.querySelector('.submit-btn');
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
+        });
+    </script>
+</body>
+</html>
