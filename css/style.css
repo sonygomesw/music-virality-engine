@@ -967,6 +967,16 @@ p {
     }
 }
 
+.footer-contact {
+    text-align: center;
+}
+
+.footer-contact p {
+    color: var(--gray-400);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
 .footer-links {
     display: flex;
     gap: 24px;
