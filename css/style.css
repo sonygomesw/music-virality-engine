@@ -308,6 +308,18 @@ p {
     font-weight: 500;
 }
 
+.trusted-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.6;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s ease;
+}
+
+.trusted-logo:hover {
+    opacity: 1;
+}
+
 /* ========================================
    SECTION COMMON STYLES
    ======================================== */
@@ -1048,6 +1060,10 @@ p {
 
     .trusted-item {
         font-size: 12px;
+    }
+
+    .trusted-logo {
+        height: 28px;
     }
 
     .pillars {
