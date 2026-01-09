@@ -230,8 +230,15 @@ p {
     font-size: 18px;
     color: var(--gray-400);
     max-width: 600px;
-    margin: 0 auto 48px;
+    margin: 0 auto 24px;
     line-height: 1.7;
+}
+
+.hero-micro {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 48px;
 }
 
 .hero-stats {
@@ -1368,6 +1375,29 @@ p {
     text-align: center;
 }
 
+.transparency-guarantee {
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.08) 0%, var(--bg) 100%);
+    border: 1px solid var(--green);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    max-width: 500px;
+    margin: 32px auto;
+    text-align: center;
+}
+
+.transparency-guarantee h4 {
+    font-size: 16px;
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.transparency-guarantee p {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin: 0;
+    line-height: 1.5;
+}
+
 .pricings-note {
     font-size: 13px;
     color: var(--gray-600);
@@ -1667,6 +1697,40 @@ p {
 }
 
 /* ========================================
+   CHECKPOINT
+   ======================================== */
+
+.checkpoint {
+    padding: 80px 24px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.checkpoint .container {
+    text-align: center;
+}
+
+.checkpoint-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .checkpoint {
+        padding: 60px 16px;
+    }
+
+    .checkpoint-text {
+        font-size: 20px;
+    }
+}
+
+/* ========================================
    LEAD MAGNET
    ======================================== */
 
@@ -1778,6 +1842,13 @@ p {
 .cta-check {
     color: var(--green);
     font-weight: 600;
+}
+
+.cta-law {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 32px;
 }
 
 .cta-buttons {
