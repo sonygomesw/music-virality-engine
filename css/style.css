@@ -691,6 +691,140 @@ p {
 }
 
 /* ========================================
+   MATH BEHIND STREAMS
+   ======================================== */
+
+.math-section {
+    padding: 120px 24px;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%);
+}
+
+.math-section .container {
+    text-align: center;
+}
+
+.math-section h2 {
+    margin-bottom: 48px;
+}
+
+.math-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.math-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.math-equation {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 40px;
+    text-align: center;
+}
+
+.math-number {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.math-label {
+    font-size: 14px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.math-equals {
+    font-size: 32px;
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.math-plus {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.math-plus-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.math-benefits {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 600px) {
+    .math-benefits {
+        grid-template-columns: 1fr;
+    }
+}
+
+.math-benefits li {
+    font-size: 15px;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.math-benefits li::before {
+    content: "+";
+    color: var(--green);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.math-hook {
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.math-question {
+    font-size: 18px;
+    color: var(--blue);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .math-section {
+        padding: 80px 16px;
+    }
+
+    .math-number {
+        font-size: 28px;
+    }
+
+    .math-equation {
+        padding: 24px 32px;
+    }
+}
+
+/* ========================================
    PRICING
    ======================================== */
 
@@ -898,6 +1032,77 @@ p {
 .faq-item p {
     font-size: 15px;
     line-height: 1.6;
+}
+
+/* ========================================
+   LEAD MAGNET
+   ======================================== */
+
+.lead-magnet {
+    padding: 120px 24px;
+}
+
+.lead-magnet-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, var(--bg-card) 100%);
+    border: 1px solid var(--blue);
+    border-radius: var(--radius-xl);
+    padding: 56px 48px;
+    text-align: center;
+}
+
+.lead-magnet h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 16px;
+}
+
+.lead-magnet-text {
+    font-size: 16px;
+    color: var(--gray-400);
+    margin-bottom: 24px;
+}
+
+.lead-magnet-list {
+    list-style: none;
+    text-align: left;
+    max-width: 360px;
+    margin: 0 auto 32px;
+}
+
+.lead-magnet-list li {
+    font-size: 15px;
+    color: var(--gray-400);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lead-magnet-list li::before {
+    content: "✓";
+    color: var(--green);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.lead-magnet .btn {
+    margin-bottom: 16px;
+}
+
+.lead-magnet-note {
+    font-size: 13px;
+    color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+    .lead-magnet {
+        padding: 80px 16px;
+    }
+
+    .lead-magnet-card {
+        padding: 40px 24px;
+    }
 }
 
 /* ========================================
