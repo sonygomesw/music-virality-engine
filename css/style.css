@@ -490,176 +490,246 @@ p {
 }
 
 /* ========================================
-   WHY TRACKS FAIL
+   COMPARISON TABLE
    ======================================== */
 
-.why-fail {
+.comparison {
     padding: 120px 24px;
 }
 
-.why-fail .container {
+.comparison .container {
     text-align: center;
 }
 
-.fail-grid {
+.comparison-table {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    max-width: 1000px;
-    margin: 56px auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-@media (max-width: 900px) {
-    .fail-grid {
+@media (max-width: 768px) {
+    .comparison-table {
         grid-template-columns: 1fr;
         max-width: 400px;
     }
 }
 
-.fail-card {
+.comparison-col {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px 24px;
-    text-align: center;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
 }
 
-.fail-visual {
-    height: 100px;
+.comparison-without {
+    opacity: 0.7;
+}
+
+.comparison-with {
+    border-color: var(--green);
+    background: linear-gradient(180deg, rgba(22, 163, 74, 0.05) 0%, var(--bg-card) 100%);
+}
+
+.comparison-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    align-items: center;
+    gap: 12px;
 }
 
-.fail-bar {
-    width: 48px;
-    height: var(--height);
-    background: var(--blue);
-    border-radius: 6px 6px 0 0;
-    position: relative;
+.comparison-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-top: 8px;
-}
-
-.fail-bar-dim {
-    background: var(--border);
-}
-
-.fail-bar-label {
-    font-size: 10px;
-    color: var(--white);
+    font-size: 14px;
     font-weight: 600;
-    white-space: nowrap;
 }
 
-.fail-bar-dim .fail-bar-label {
+.comparison-without .comparison-icon {
+    background: #888888;
+    color: #ffffff;
+}
+
+.comparison-with .comparison-icon {
+    background: var(--green);
+    color: #ffffff;
+}
+
+.comparison-header h3 {
+    font-size: 18px;
+    color: var(--white);
+}
+
+.comparison-row {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-label {
+    font-size: 14px;
     color: var(--gray-500);
 }
 
-.fail-circle {
-    border-radius: 50%;
-    border: 2px solid var(--blue);
-}
-
-.fail-circle-small {
-    width: 30px;
-    height: 30px;
-    background: var(--blue);
-}
-
-.fail-circle-large {
-    width: 70px;
-    height: 70px;
-}
-
-.fail-circle-dim {
-    border-color: var(--border);
-    opacity: 0.5;
-}
-
-.fail-timeline {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.fail-timeline-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--border);
-    position: relative;
-}
-
-.fail-timeline-dot::after {
-    content: "";
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    width: 16px;
-    height: 2px;
-    background: var(--border);
-    transform: translateY(-50%);
-}
-
-.fail-timeline-dot:last-child::after {
-    display: none;
-}
-
-.fail-timeline-dot.active {
-    background: var(--blue);
-}
-
-.fail-card h4 {
-    font-size: 18px;
+.comparison-value {
+    font-size: 15px;
     font-weight: 600;
     color: var(--white);
-    margin-bottom: 12px;
 }
 
-.fail-card p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.fail-solution {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, var(--bg-card) 100%);
-    border: 1px solid var(--blue);
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.fail-solution-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--blue);
-    letter-spacing: 0.1em;
-    margin-bottom: 12px;
-}
-
-.fail-solution h3 {
-    font-size: 20px;
-    color: var(--white);
-    line-height: 1.4;
+.comparison-value.highlight {
+    color: var(--green);
 }
 
 @media (max-width: 768px) {
-    .why-fail {
+    .comparison {
+        padding: 80px 16px;
+    }
+}
+
+/* ========================================
+   TIMELINE
+   ======================================== */
+
+.timeline-section {
+    padding: 120px 24px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline-section .container {
+    text-align: center;
+}
+
+.timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+@media (max-width: 600px) {
+    .timeline::before {
+        left: 40px;
+    }
+}
+
+.timeline-item {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    position: relative;
+}
+
+.timeline-week {
+    width: 80px;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    text-align: right;
+    padding-right: 24px;
+    position: relative;
+}
+
+.timeline-week::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .timeline-week {
+        width: 60px;
+        font-size: 12px;
+        padding-right: 16px;
+    }
+}
+
+.timeline-item-final .timeline-week::after {
+    background: var(--green);
+    border-color: var(--green);
+}
+
+.timeline-content {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+}
+
+.timeline-content h4 {
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--gray-500);
+}
+
+.timeline-note {
+    margin-top: 48px;
+    padding: 20px 32px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, var(--bg) 100%);
+    border: 1px solid var(--blue);
+    border-radius: var(--radius-lg);
+    display: inline-block;
+}
+
+.timeline-note p {
+    font-size: 16px;
+    color: var(--gray-400);
+    margin: 0;
+}
+
+.timeline-note strong {
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .timeline-section {
         padding: 80px 16px;
     }
 
-    .fail-solution {
-        padding: 28px 24px;
+    .timeline-content {
+        padding: 16px 20px;
     }
 
-    .fail-solution h3 {
-        font-size: 18px;
+    .timeline-note {
+        padding: 16px 24px;
     }
 }
 
