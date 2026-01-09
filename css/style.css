@@ -349,6 +349,320 @@ p {
 }
 
 /* ========================================
+   FLOWCHART
+   ======================================== */
+
+.flowchart {
+    padding: 120px 24px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.flowchart .container {
+    text-align: center;
+}
+
+.flow-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 56px auto;
+    max-width: 1100px;
+}
+
+.flow-stage {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: center;
+    min-width: 130px;
+    transition: all 0.3s ease;
+}
+
+.flow-stage:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+}
+
+.flow-stage-cliptokk {
+    border-color: var(--blue);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, var(--bg) 100%);
+}
+
+.flow-stage-final {
+    border-color: var(--green);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, var(--bg) 100%);
+}
+
+.flow-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flow-stage-cliptokk .flow-icon {
+    color: var(--blue);
+}
+
+.flow-stage-final .flow-icon {
+    color: var(--green);
+}
+
+.flow-stage h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.flow-stage p {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+.flow-arrow {
+    color: var(--gray-600);
+}
+
+.flow-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+}
+
+.flow-stat {
+    text-align: center;
+}
+
+.flow-stat-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.flow-stat-text {
+    font-size: 13px;
+    color: var(--gray-400);
+    max-width: 180px;
+}
+
+@media (max-width: 900px) {
+    .flow-visual {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .flow-stage {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flowchart {
+        padding: 80px 16px;
+    }
+
+    .flow-stats {
+        gap: 24px;
+    }
+
+    .flow-stat-number {
+        font-size: 28px;
+    }
+}
+
+/* ========================================
+   WHY TRACKS FAIL
+   ======================================== */
+
+.why-fail {
+    padding: 120px 24px;
+}
+
+.why-fail .container {
+    text-align: center;
+}
+
+.fail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 56px auto;
+}
+
+@media (max-width: 900px) {
+    .fail-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+.fail-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.fail-visual {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.fail-bar {
+    width: 48px;
+    height: var(--height);
+    background: var(--blue);
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.fail-bar-dim {
+    background: var(--border);
+}
+
+.fail-bar-label {
+    font-size: 10px;
+    color: var(--white);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.fail-bar-dim .fail-bar-label {
+    color: var(--gray-500);
+}
+
+.fail-circle {
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+}
+
+.fail-circle-small {
+    width: 30px;
+    height: 30px;
+    background: var(--blue);
+}
+
+.fail-circle-large {
+    width: 70px;
+    height: 70px;
+}
+
+.fail-circle-dim {
+    border-color: var(--border);
+    opacity: 0.5;
+}
+
+.fail-timeline {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.fail-timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--border);
+    position: relative;
+}
+
+.fail-timeline-dot::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    background: var(--border);
+    transform: translateY(-50%);
+}
+
+.fail-timeline-dot:last-child::after {
+    display: none;
+}
+
+.fail-timeline-dot.active {
+    background: var(--blue);
+}
+
+.fail-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.fail-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.fail-solution {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, var(--bg-card) 100%);
+    border: 1px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.fail-solution-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.fail-solution h3 {
+    font-size: 20px;
+    color: var(--white);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .why-fail {
+        padding: 80px 16px;
+    }
+
+    .fail-solution {
+        padding: 28px 24px;
+    }
+
+    .fail-solution h3 {
+        font-size: 18px;
+    }
+}
+
+/* ========================================
    PILLARS (What does Cliptokk do?)
    ======================================== */
 
@@ -1032,6 +1346,253 @@ p {
 .faq-item p {
     font-size: 15px;
     line-height: 1.6;
+}
+
+/* ========================================
+   GUARANTEES
+   ======================================== */
+
+.guarantees {
+    padding: 120px 24px;
+}
+
+.guarantees .container {
+    text-align: center;
+}
+
+.guarantees h2 {
+    margin-bottom: 56px;
+}
+
+.guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .guarantee-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.guarantee-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 40px 32px;
+    text-align: left;
+}
+
+.guarantee-yes {
+    border-color: var(--green);
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.05) 0%, var(--bg-card) 100%);
+}
+
+.guarantee-no {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.guarantee-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.guarantee-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.guarantee-yes .guarantee-icon {
+    background: var(--green);
+    color: var(--bg);
+}
+
+.guarantee-no .guarantee-icon {
+    background: var(--gray-600);
+    color: var(--white);
+}
+
+.guarantee-header h3 {
+    font-size: 18px;
+    color: var(--white);
+}
+
+.guarantee-list {
+    list-style: none;
+}
+
+.guarantee-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.guarantee-list li:last-child {
+    border-bottom: none;
+}
+
+.guarantee-list strong {
+    display: block;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.guarantee-list p {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin: 0;
+}
+
+.guarantee-note {
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--gray-600);
+}
+
+.guarantee-note p {
+    font-size: 13px;
+    color: var(--gray-400);
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .guarantees {
+        padding: 80px 16px;
+    }
+
+    .guarantee-card {
+        padding: 32px 24px;
+    }
+}
+
+/* ========================================
+   GUIDES / RESOURCES
+   ======================================== */
+
+.guides {
+    padding: 120px 24px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.guides .container {
+    text-align: center;
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 48px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.guide-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.guide-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+}
+
+.guide-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.guide-card h3 {
+    font-size: 18px;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.guide-card > p {
+    font-size: 14px;
+    color: var(--gray-400);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.guide-topics {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.guide-topics li {
+    font-size: 13px;
+    color: var(--gray-500);
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.guide-topics li::before {
+    content: "→";
+    color: var(--blue);
+    font-size: 12px;
+}
+
+.guide-time {
+    font-size: 12px;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.guides-cta {
+    text-align: center;
+}
+
+.guides-cta p {
+    font-size: 16px;
+    color: var(--gray-400);
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .guides {
+        padding: 80px 16px;
+    }
+
+    .guide-card {
+        padding: 24px;
+    }
+
+    .guide-number {
+        font-size: 36px;
+    }
 }
 
 /* ========================================
