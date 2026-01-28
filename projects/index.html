@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Cliptokk</title>
+    <meta name="description" content="Cliptokk case studies and projects. Real results from our TikTok distribution campaigns.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple: #7C3AED;
+            --purple-light: #EDE9FE;
+            --black: #000;
+            --gray: #6B7280;
+            --gray-light: #F3F4F6;
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 40px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-purple {
+            background: var(--purple);
+            color: var(--white);
+        }
+
+        .btn-purple:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 140px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 500px;
+        }
+
+        /* Projects Grid */
+        .projects {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .project-card:last-child {
+            border-bottom: none;
+        }
+
+        .project-image {
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-content h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .project-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .project-box::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid var(--purple);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .project-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .project-stats h3 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .project-stats h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .project-description {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .project-results {
+            border-top: 1px solid var(--gray-light);
+            padding-top: 16px;
+        }
+
+        .project-results p {
+            font-size: 14px;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+
+        .project-results strong {
+            font-weight: 700;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Decorative elements */
+        .decoration {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            font-size: 40px;
+            z-index: 10;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 80px 40px;
+            background: var(--gray-light);
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .footer a {
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .project-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .nav-container, .hero, .projects {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .decoration {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">CLIPTOKK</a>
+            <a href="https://calendly.com/featurigo/30min" target="_blank" class="btn btn-purple">Book a call</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>HOW BRANDS BUY<br>ATTENTION TODAY</h1>
+        <p>Real campaigns. Real numbers. This is what distribution at scale looks like.</p>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects">
+
+        <!-- Sombr -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/Sombr.jpeg" alt="Sombr">
+            </div>
+            <div class="project-content">
+                <h2>SOMBR - 320M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>50 PAGES</h3>
+                        <h4>1B+ STREAMS</h4>
+                    </div>
+                    <p class="project-description">
+                        Creating Sombr fan pages and posting daily—hooks, quotes, and live performance clips.
+                    </p>
+                    <div class="project-results">
+                        <p>Results?</p>
+                        <p><strong>1B+ streams</strong></p>
+                        <p><strong>56M monthly listeners</strong></p>
+                        <p><strong>Grammy nominated</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+        <!-- Drake -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/Partynextdoor.jpg.webp" alt="Drake x Nokia">
+            </div>
+            <div class="project-content">
+                <h2>DRAKE X NOKIA - 220M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>80 PAGES + 1200 CLIPPERS</h3>
+                        <h4>18,000 POSTS</h4>
+                    </div>
+                    <p class="project-description">
+                        For the two weeks following Drake's 'Nokia' release, the strategy was simple: break the single into clips, edits, and moments, then push them relentlessly across TikTok and YouTube Shorts to dominate the feeds. Clip everything. Flood everywhere.
+                    </p>
+                    <div class="project-results">
+                        <p>Results?</p>
+                        <p><strong>No.1 on Billboard</strong></p>
+                        <p><strong>200 million streams</strong></p>
+                        <p><strong>Massive success</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+        <!-- Marlon x H&M -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/Marlon.jpg" alt="Marlon x H&M" style="object-position: top;">
+            </div>
+            <div class="project-content">
+                <h2>MARLON X H&M - 214M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>UGC-DRIVEN CAMPAIGN</h3>
+                        <h4>700 CLIPPERS / 15,000 POSTS</h4>
+                    </div>
+                    <p class="project-description">
+                        One TikTok hit 11 million. Several crossed 3 million. The 18 event posts totaled 45M+ views. Marlon Lundgren Garcia's Twitch stream drew 470K viewers. But then the clips got reshared and that's where it exploded: 200 million views.
+                    </p>
+                    <div class="project-results">
+                        <p>Results?</p>
+                        <p><strong>214M total views</strong></p>
+                        <p><strong>470K Twitch viewers</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+        <!-- Lacy -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/Lacy.jpeg" alt="Lacy">
+            </div>
+            <div class="project-content">
+                <h2>LACY - 200M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>200 CLIPPERS</h3>
+                        <h4>8,000 VIDEOS</h4>
+                    </div>
+                    <p class="project-description">
+                        Clipping Lacy's recent IRL streams and pushing them out across YouTube and TikTok.
+                    </p>
+                    <div class="project-results">
+                        <p>Results?</p>
+                        <p><strong>200M views</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+        <!-- Gary Vee -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/Garyvee.jpg" alt="Gary Vee">
+            </div>
+            <div class="project-content">
+                <h2>GARY VEE - 148M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>50 TIKTOK PAGES</h3>
+                        <h4>30 YOUTUBE SHORTS / 20 FACEBOOK</h4>
+                    </div>
+                    <p class="project-description">
+                        Content posted through branded pages. His podcasts are edited and repurposed into clips, then reposted in both English and Spanish.
+                    </p>
+                    <div class="project-results">
+                        <p>Results?</p>
+                        <p><strong>148M views</strong></p>
+                        <p><strong>Multi-platform distribution</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+        <!-- J Balvin -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/J-Balvin.jpg.webp" alt="J Balvin">
+            </div>
+            <div class="project-content">
+                <h2>J BALVIN - 110M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>40 PAGES + 500 CLIPPERS</h3>
+                        <h4>30,000 VIDEOS</h4>
+                    </div>
+                    <p class="project-description">
+                        J Balvin. Historic comeback in Medellín. 7 hours. 25+ guests. One mission: clip every moment and flood Colombia, the US, and South America with content from the show.
+                    </p>
+                    <div class="project-results">
+                        <p>Results?</p>
+                        <p><strong>110M views</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+        <!-- Fred Again -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="../images/people/fred-again.jpg.webp" alt="Fred Again">
+            </div>
+            <div class="project-content">
+                <h2>FRED AGAIN - 95M VIEWS</h2>
+                <div class="project-box">
+                    <div class="project-stats">
+                        <h3>30 PAGES + 300 CLIPPERS</h3>
+                        <h4>25,000 POSTS</h4>
+                    </div>
+                    <p class="project-description">
+                        Ran for 10 weeks across 10 cities. The goal was simple: slice up his DJ sets and flood YouTube Shorts and TikTok with clips and edits.
+                    </p>
+                    <div class="project-results">
+                        <p>The outcome?</p>
+                        <p><strong>100K+ on concert waitlists</strong></p>
+                        <p><strong>95 million views</strong></p>
+                        <p><strong>Massive success</strong></p>
+                    </div>
+                </div>
+                <p class="tagline">More reach. No extra content.</p>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Want results like these?</h2>
+        <p>Let's discuss how we can deploy your content at scale.</p>
+        <a href="https://calendly.com/featurigo/30min" target="_blank" class="btn btn-purple" style="padding: 14px 32px; font-size: 16px;">Book a call</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Cliptokk. <a href="/">Back to homepage</a></p>
+    </footer>
+
+    <!-- Decoration -->
+    <div class="decoration">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M20 0L20 40M0 20L40 20M5.86 5.86L34.14 34.14M34.14 5.86L5.86 34.14" stroke="black" stroke-width="2"/>
+        </svg>
+    </div>
+
+</body>
+</html>
