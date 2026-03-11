@@ -836,6 +836,150 @@
             font-weight: bold;
         }
 
+        /* Viral Distribution Section */
+        .viral-section {
+            padding: 80px 20px 120px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .viral-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .viral-intro h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-family: "Geist SemiBold", sans-serif;
+            color: var(--white);
+            margin-bottom: 25px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .viral-intro p {
+            font-size: 16px;
+            font-family: "Geist Regular", sans-serif;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .viral-intro .highlight {
+            color: var(--white);
+            font-family: "Geist SemiBold", sans-serif;
+        }
+
+        .viral-intro .accent {
+            color: var(--accent);
+        }
+
+        /* Table Style */
+        .viral-table {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .viral-table-header {
+            display: grid;
+            grid-template-columns: 1fr 150px 120px;
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--dark-border);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .viral-table-header span {
+            font-size: 12px;
+            font-family: "Geist Medium", sans-serif;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .viral-table-header span:not(:first-child) {
+            text-align: right;
+        }
+
+        .viral-table-row {
+            display: grid;
+            grid-template-columns: 1fr 150px 120px;
+            padding: 18px 30px;
+            border-bottom: 1px solid var(--dark-border);
+            transition: background 0.2s;
+        }
+
+        .viral-table-row:last-child {
+            border-bottom: none;
+        }
+
+        .viral-table-row:hover {
+            background: rgba(255, 248, 70, 0.03);
+        }
+
+        .viral-table-name {
+            font-size: 16px;
+            font-family: "Geist Medium", sans-serif;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+        }
+
+        .viral-table-videos {
+            font-size: 20px;
+            font-family: "Geist SemiBold", sans-serif;
+            color: var(--accent);
+            text-align: right;
+            letter-spacing: -0.02em;
+        }
+
+        .viral-table-views {
+            font-size: 14px;
+            font-family: "Geist Regular", sans-serif;
+            color: var(--gray);
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .viral-bottom-text {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px 30px;
+            background: rgba(255, 248, 70, 0.05);
+            border: 1px solid rgba(255, 248, 70, 0.2);
+            border-radius: 15px;
+        }
+
+        .viral-bottom-text p {
+            font-size: 16px;
+            font-family: "Geist Regular", sans-serif;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .viral-bottom-text .highlight {
+            color: var(--white);
+            font-family: "Geist SemiBold", sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .viral-table-header,
+            .viral-table-row {
+                grid-template-columns: 1fr 100px 80px;
+                padding: 15px 20px;
+            }
+            .viral-table-videos {
+                font-size: 16px;
+            }
+            .viral-table-views {
+                font-size: 12px;
+            }
+        }
+
         /* FAQ Simple */
         .faq-simple {
             max-width: 800px;
@@ -1281,6 +1425,66 @@
     <section id="how-it-works" class="section" style="padding: 100px 20px;">
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
             <p style="font-size: clamp(20px, 3vw, 28px); font-family: 'Geist Regular', sans-serif; color: var(--gray); line-height: 1.6;">If you're posting once a day and wondering why it's not working —<br><span style="color: var(--white); font-family: 'Geist SemiBold', sans-serif;">it's not the content. It's the volume.</span></p>
+        </div>
+    </section>
+
+    <!-- Viral Distribution Education Section -->
+    <section class="viral-section">
+        <div class="viral-intro">
+            <h2>The most viral people don't post 3-5 times a day.<br><span style="color: var(--accent);">They have thousands of videos posted daily.</span></h2>
+            <p>The biggest names on the internet aren't going viral by chance. They have <span class="highlight">thousands of videos</span> reshared across TikTok <span class="highlight">every single day</span>. Some don't even post on their main account. <span class="accent">Some don't even have one.</span></p>
+        </div>
+
+        <div class="viral-table">
+            <div class="viral-table-header">
+                <span>Name</span>
+                <span>Videos on TikTok</span>
+                <span>Total Views</span>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">Drake</div>
+                <div class="viral-table-videos">10M</div>
+                <div class="viral-table-views">122B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">MrBeast</div>
+                <div class="viral-table-videos">3M</div>
+                <div class="viral-table-views">126B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">Kai Cenat</div>
+                <div class="viral-table-videos">3M</div>
+                <div class="viral-table-views">130B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">IShowSpeed</div>
+                <div class="viral-table-videos">2.3M</div>
+                <div class="viral-table-views">145B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">Kylie Jenner</div>
+                <div class="viral-table-videos">1.4M</div>
+                <div class="viral-table-views">108B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">Central Cee</div>
+                <div class="viral-table-videos">846K</div>
+                <div class="viral-table-views">36B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">Duolingo</div>
+                <div class="viral-table-videos">390K</div>
+                <div class="viral-table-views">15B views</div>
+            </div>
+            <div class="viral-table-row">
+                <div class="viral-table-name">Timothée Chalamet</div>
+                <div class="viral-table-videos">140K</div>
+                <div class="viral-table-views">4B views</div>
+            </div>
+        </div>
+
+        <div class="viral-bottom-text">
+            <p>They're not viral by accident. <span class="highlight">They have more videos on social media than you.</span></p>
         </div>
     </section>
 
